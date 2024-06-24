@@ -108,10 +108,10 @@ h6 {
 }
 
 
-.header .btn-getstarted,
-.header .btn-getstarted:focus {
+.header .btn-get-started,
+.header .btn-get-started:focus {
   color: var(--contrast-color);
-  background: var(--accent-color);
+  background: #037584;
   font-size: 14px;
   padding: 8px 25px;
   margin: 0 0 0 30px;
@@ -119,9 +119,9 @@ h6 {
   transition: 0.3s;
 }
 
-.header .btn-getstarted:hover,
-.header .btn-getstarted:focus:hover {
-  color: var(--contrast-color);
+.header .btn-get-started:hover,
+.header .btn-get-started:focus:hover {
+  color: var(--heading-color);
   background: color-mix(in srgb, var(--accent-color), transparent 15%);
 }
 
@@ -130,7 +130,7 @@ h6 {
     order: 1;
   }
 
-  .header .btn-getstarted {
+  .header .btn-get-started {
     order: 2;
     margin: 0 15px 0 0;
     padding: 6px 15px;
@@ -860,7 +860,7 @@ section,
 }
 
 .hero .btn-get-started:hover {
-  color: var(--contrast-color);
+  color: var(--heading-color);
   background: color-mix(in srgb, var(--accent-color), transparent 15%);
   box-shadow: 0 8px 28px color-mix(in srgb, var(--accent-color), transparent 55%);
 }
@@ -1003,7 +1003,9 @@ section,
   margin-bottom: 0;
 }
 
-.about .content .read-more {
+
+.read-more,
+.read-more {
   background: var(--accent-color);
   color: var(--contrast-color);
   font-family: var(--heading-font);
@@ -1018,19 +1020,22 @@ section,
   justify-content: center;
 }
 
-.about .content .read-more i {
+.read-more i,
+.read-more i {
   font-size: 18px;
   margin-left: 5px;
   line-height: 0;
   transition: 0.3s;
 }
 
-.about .content .read-more:hover {
+.read-more:hover,
+.read-more:hover {
   background: color-mix(in srgb, var(--accent-color), transparent 20%);
   padding-right: 19px;
 }
 
-.about .content .read-more:hover i {
+.read-more:hover i,
+.read-more:hover i {
   margin-left: 10px;
   margin-right: 20px;
 }
@@ -1046,13 +1051,18 @@ section,
   padding: 20px 0;
 }
 
+.clients .row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px; /* Tambahkan jarak antar logo */
+}
+
 .clients .client-logo {
   display: flex;
   justify-content: center;
   align-items: center;
   overflow: hidden;
   padding: 10px; /* Padding untuk memberikan jarak di sekitar logo */
-  margin-bottom: 20px; /* Margin bawah untuk memberikan jarak antar logo */
 }
 
 .clients .client-logo img {
@@ -1063,14 +1073,14 @@ section,
 }
 
 @media (max-width: 1200px) {
-  .clients .client-logo {
-    margin-bottom: 20px; /* Margin bawah pada layar lebih kecil */
+  .clients .row {
+    gap: 15px; /* Kurangi jarak antar logo pada layar lebih kecil */
   }
 }
 
 @media (max-width: 768px) {
-  .clients .client-logo {
-    padding: 10px; /* Padding pada layar lebih kecil */
+  .clients .row {
+    gap: 10px; /* Kurangi jarak antar logo pada layar lebih kecil */
   }
 }
 
@@ -1392,137 +1402,82 @@ section,
 /*--------------------------------------------------------------
 # Pricing Section
 --------------------------------------------------------------*/
-.pricing .pricing-item {
-  background-color: color-mix(in srgb, var(--accent-color), transparent 96%);
-  padding: 40px 40px;
-  height: 100%;
-  border-radius: 15px;
+.pricing .card {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  overflow: hidden;
+  background-color: #f8f9fa; /* Default background color */
+  transition: transform 0.3s;
 }
 
-.pricing h3 {
-  font-weight: 600;
+.pricing .card:hover {
+  transform: translateY(-10px);
+}
+
+.pricing .card .card-body {
+  padding: 20px;
+}
+
+.pricing .card .card-title {
+  font-size: 1.5rem;
   margin-bottom: 15px;
-  font-size: 20px;
 }
 
-.pricing h4 {
-  color: var(--accent-color);
-  font-size: 48px;
-  font-weight: 700;
-  font-family: var(--heading-font);
-  margin-bottom: 0;
+.pricing .card .description {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 20px;
 }
 
-.pricing h4 sup {
-  font-size: 28px;
-}
-
-.pricing h4 span {
-  color: color-mix(in srgb, var(--default-color), transparent 50%);
-  font-size: 18px;
-  font-weight: 500;
-}
-
-.pricing .description {
-  font-size: 14px;
-}
-
-.pricing .cta-btn {
-  background-color: var(--default-color);
-  color: var(--contrast-color);
-  display: block;
-  text-align: center;
-  padding: 10px 35px;
-  border-radius: 5px;
-  font-size: 16px;
-  font-weight: 500;
-  font-family: var(--heading-font);
-  transition: 0.3s;
-  margin-top: 20px;
-  margin-bottom: 6px;
-}
-
-.pricing .cta-btn:hover {
-  background: var(--accent-color);
-  color: var(--contrast-color);
-}
-
-.pricing ul {
-  padding: 0;
-  list-style: none;
-  color: color-mix(in srgb, var(--default-color), transparent 30%);
-  text-align: left;
-  line-height: 20px;
-}
-
-.pricing ul li {
-  padding: 10px 0;
-  display: flex;
-  align-items: center;
-}
-
-.pricing ul li:last-child {
-  padding-bottom: 0;
-}
-
-.pricing ul i {
-  color: #059652;
-  font-size: 24px;
-  padding-right: 3px;
-}
-
-.pricing ul .na {
-  color: color-mix(in srgb, var(--default-color), transparent 60%);
-}
-
-.pricing ul .na i {
-  color: color-mix(in srgb, var(--default-color), transparent 60%);
-}
-
-.pricing ul .na span {
-  text-decoration: line-through;
+.pricing .card .text-center.small {
+  margin-bottom: 10px;
 }
 
 .pricing .featured {
-  position: relative;
+  background-color: #e3f2fd; /* Background color for featured cards */
 }
 
-.pricing .featured .popular {
-  position: absolute;
-  top: 15px;
-  right: 15px;
-  background-color: var(--accent-color);
-  color: var(--contrast-color);
-  padding: 5px 15px;
-  margin: 0;
-  border-radius: 5px;
-  font-size: 14px;
-  font-weight: 400;
+.section-title h2 {
+  text-align: center;
+  margin-bottom: 40px;
+  font-size: 2.5rem;
 }
 
-.pricing .featured .cta-btn {
-  background: var(--accent-color);
-  color: var(--contrast-color);
+.pricing {
+  padding: 50px 0;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.col-lg-4, .col-md-6 {
+  padding: 15px;
+  box-sizing: border-box;
+}
+
+[data-aos] {
+  transition: all 0.5s ease;
 }
 
 @media (max-width: 992px) {
-  .pricing .box {
-    max-width: 60%;
-    margin: 0 auto 30px auto;
+  .col-lg-4 {
+      flex: 0 0 50%;
+      max-width: 50%;
   }
 }
 
-@media (max-width: 767px) {
-  .pricing .box {
-    max-width: 80%;
-    margin: 0 auto 30px auto;
-  }
-}
-
-@media (max-width: 420px) {
-  .pricing .box {
-    max-width: 100%;
-    margin: 0 auto 30px auto;
+@media (max-width: 768px) {
+  .col-lg-4, .col-md-6 {
+      flex: 0 0 100%;
+      max-width: 100%;
   }
 }
 
@@ -1619,6 +1574,7 @@ section,
 --------------------------------------------------------------*/
 /* News & Articles Section */
 #news {
+  padding-bottom: 10px;
   padding: 60px 0;
   background-color: #f9f9f9;
 }
@@ -1626,7 +1582,7 @@ section,
 #news .section-title h2 {
   font-size: 32px;
   font-weight: 600;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   position: relative;
   padding-bottom: 10px;
   color: #333;
@@ -1729,17 +1685,20 @@ section,
 /*--------------------------------------------------------------
 # Testimonials Section
 --------------------------------------------------------------*/
+/* Testimonials Section */
 .testimonials {
+  padding: 60px 0;
   --background-color: color-mix(in srgb, var(--accent-color), transparent 97%);
 }
 
 .testimonials .testimonial-item {
   background-color: var(--contrast-color);
   box-shadow: 0px 0 20px color-mix(in srgb, var(--default-color), transparent 90%);
-  box-sizing: content-box;
+  box-sizing: border-box;
   padding: 30px;
-  margin: 40px 30px;
+  margin: 20px;
   min-height: 320px;
+  max-width: 300px; /* Batasi lebar maksimum card */
   display: flex;
   flex-direction: column;
   text-align: center;
@@ -1759,7 +1718,7 @@ section,
   width: 90px;
   border-radius: 50%;
   border: 4px solid var(--background-color);
-  margin: 0 auto;
+  margin: 0 auto 15px;
 }
 
 .testimonials .testimonial-item h3 {
@@ -1776,16 +1735,18 @@ section,
 
 .testimonials .testimonial-item p {
   font-style: italic;
-  margin: 0 auto 15px auto;
+  margin: 15px 0 0 0;
 }
 
 .testimonials .swiper-wrapper {
+  display: flex;
   height: auto;
 }
 
 .testimonials .swiper-pagination {
   margin-top: 20px;
   position: relative;
+  text-align: center;
 }
 
 .testimonials .swiper-pagination .swiper-pagination-bullet {
@@ -1793,6 +1754,7 @@ section,
   height: 12px;
   background-color: color-mix(in srgb, var(--default-color), transparent 85%);
   opacity: 1;
+  margin: 0 5px;
 }
 
 .testimonials .swiper-pagination .swiper-pagination-bullet-active {
@@ -1800,30 +1762,33 @@ section,
 }
 
 .testimonials .swiper-slide {
+  display: flex;
+  justify-content: center;
   opacity: 0.3;
+  transition: opacity 0.3s;
+}
+
+.testimonials .swiper-slide-active {
+  opacity: 1;
 }
 
 @media (max-width: 1199px) {
-  .testimonials .swiper-slide-active {
-    opacity: 1;
+  .testimonials .testimonial-item {
+    margin: 20px;
   }
 
   .testimonials .swiper-pagination {
-    margin-top: 0;
-  }
-
-  .testimonials .testimonial-item {
-    margin: 40px 20px;
+    margin-top: 10px;
   }
 }
 
 @media (min-width: 1200px) {
-  .testimonials .swiper-slide-next {
+  .testimonials .swiper-slide-next,
+  .testimonials .swiper-slide-prev {
     opacity: 1;
     transform: scale(1.12);
   }
 }
-
 /*--------------------------------------------------------------
 # Testimonials Section
 --------------------------------------------------------------*/
@@ -1897,8 +1862,12 @@ section,
 /*--------------------------------------------------------------
 # Contact Section
 --------------------------------------------------------------*/
+.contact{
+  padding-bottom: 5px;
+}
 .contact .info-item {
   padding: 20px 0 30px 0;
+  padding-bottom: 10px;
   box-shadow: 0 0 4px color-mix(in srgb, var(--default-color), transparent 85%);
 }
 
@@ -2025,6 +1994,217 @@ section,
     transform: rotate(360deg);
   }
 }
+
+
+
+/* css berita*/
+        /* Swiper Container */
+        .swiper-container {
+          width: 100%;
+          padding-top: 50px;
+          padding-bottom: 50px;
+      }
+
+      /* Swiper Slide */
+      .swiper-slide {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 33.33%;
+          /* Adjusting the width to display 3 cards per row */
+          box-sizing: border-box;
+      }
+
+      /* Card Style */
+      .card {
+          padding-bottom: 5px;
+          width: 100%;
+          max-width: 100%;
+          margin: 10px;
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+          border-radius: 10px;
+          overflow: hidden;
+      }
+
+      /* Card Image */
+      .card-img-top {
+          width: 100%;
+          height: auto;
+          border-bottom: 1px solid #ddd;
+      }
+
+      /* Card Body */
+      .card-body {
+          padding: 20px;
+      }
+
+      /* Card Title */
+      .card-body h5 {
+          font-size: 1.5rem;
+          margin-bottom: 15px;
+      }
+
+      /* Card Text */
+      .card-body p {
+          font-size: 1rem;
+          color: #555;
+      }
+
+      /* Read More Link */
+      .card-body a {
+          font-size: 1rem;
+          color: #1d3ede;
+          text-decoration: none;
+      }
+
+      .card-body a:hover {
+          text-decoration: underline;
+      }
+
+      /* Swiper Navigation */
+      /* .swiper-button-next,
+      .swiper-button-prev {
+          color: #1d3ede;
+      } */
+
+      /* Swiper Pagination */
+      .swiper-pagination {
+          bottom: 10px;
+      }
+
+      .swiper-pagination-bullet {
+          background: #1d3ede;
+      }
+      /*akhir css berita*/
+
+      .container-fluid.gtco-numbers-block {
+          padding: 0;
+      }
+
+      .container {
+          position: relative;
+          width: 100%;
+          height: 100%;
+      }
+
+      .svg__image {
+          width: 100%;
+          height: auto;
+      }
+
+      text {
+          font-family: 'Arial', sans-serif;
+      }
+
+
+      .gtco-features-list .media {
+          display: flex;
+          align-items: center;
+      }
+
+      .gtco-features-list .media .oval {
+          width: 64px;
+          height: 64px;
+          overflow: hidden;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          border-radius: 50%;
+          background: #f1f1f1;
+      }
+
+      .gtco-features-list .media .oval img {
+          max-width: 100%;
+          max-height: 100%;
+      }
+
+      .gtco-features-list .media .media-body {
+          flex: 1;
+      }
+
+      .gtco-features-list .media h5 {
+          margin-bottom: 0.5rem;
+      }
+
+      .gtco-features-list .media p {
+          margin: 0;
+      }
+
+      /* Gaya Tabel Responsif */
+      .table {
+          width: 100%;
+          max-width: 100%;
+          border-collapse: collapse;
+          margin-bottom: 1rem;
+          color: #212529;
+      }
+
+      .table .btn-order,
+      .table .btn-order:focus {
+          color: var(--contrast-color);
+          background: var(--accent-color);
+          font-size: 14px;
+          padding: 8px 25px;
+          margin: 0 0 0 30px;
+          transition: 0.3s;
+      }
+
+      .table .btn-order:hover,
+      .table .btn-order:focus:hover {
+          color: var(--contrast-color);
+          background: color-mix(in srgb, var(--accent-color), transparent 15%);
+      }
+
+
+      .table .btn-order {
+          order: 2;
+          margin: 0 15px 0 0;
+          padding: 6px 15px;
+      }
+
+
+      .table th,
+      .table td {
+          padding: 0.75rem;
+          vertical-align: top;
+          border-top: 1px solid #dee2e6;
+          white-space: nowrap;
+          /* Hindari pemecahan kata */
+          overflow: hidden;
+          /* Sembunyikan overflow jika terjadi */
+          text-overflow: ellipsis;
+          /* Tampilkan titik-titik untuk teks yang terpotong */
+      }
+
+      .table thead th {
+          vertical-align: bottom;
+          border-bottom: 2px solid #dee2e6;
+      }
+
+      /* Responsif */
+      @media (max-width: 767px) {
+          .table-responsive {
+              overflow-x: auto;
+              -webkit-overflow-scrolling: touch;
+              border: 1px solid #ddd;
+          }
+
+          .table-responsive .table th,
+          .table-responsive .table td {
+              white-space: normal;
+              /* Izinkan pemecahan kata */
+              max-width: none;
+              /* Atur lebar maksimum untuk sel tabel */
+          }
+      }
+
+
+      .custom-icon {
+          font-size: 2rem;
+          /* Atur ukuran ikon sesuai kebutuhan */
+          color: #388da8;
+          /* Warna biru untuk ikon */
+      }
 
 /*--------------------------------------------------------------
 # Service Details Section
